@@ -39,5 +39,7 @@ range.methods = {
 //Here are example used of a range object.
 var r = range(1,3); 	// Create a range object
 r.includes(2);		// => true 2 is in the range
-r.foreach(console.log);	// Prints 1 2 3
+// bind console.log function to a variable
+var myFunction = console.log.bind(console);
+r.foreach(myFunction);	// Prints 1 2 3
 console.log(r);		// Prints (1...3)
